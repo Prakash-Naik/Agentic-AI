@@ -1,0 +1,12 @@
+{
+  "name": "agentic",
+  "version": "1.0.0",
+  "description": "A modular Python agent framework for LLM tool use and orchestration.",
+  "main": "run_agent.py",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prakash-Naik/agentic.git"
+  },
+  "author": "Prakash Naik",
+  "license": "MIT"
+}

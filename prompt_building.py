@@ -1,18 +1,19 @@
-def prompt_builder(user_Query):
-    prompt = []
-
-    #Add system prompt
-    system_prompt = "You are a helpful assistant that provides accurate and concise answers to user queries."
-
-    #add system prompt to prompt list.
-    prompt.append({"role": "system", "content": system_prompt})
-
-    #add user query to prompt
-    prompt.append({"role": "user", "content": user_Query})
-
-    return prompt
-
-msg = input("Enter your query: ")
 
 
-print(prompt_builder(msg))
+#Ollama takes only text input Not python dict
+#so convert prompt list of dictionary to string format
+
+def str_prompt(conversation):
+    prompt_str = ""
+
+    #intial Prompt conversion to string
+    for msg in conversation:
+        role = msg["role"]
+        content = msg["content"]
+        prompt_str += f"{role}: {content}\n"
+
+    #addding Assistant role to prompt after every conversion
+    prompt_str += "Assistant :"
+
+    return prompt_str
+
